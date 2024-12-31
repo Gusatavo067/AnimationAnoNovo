@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87ceeb, #f5f5f5);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+#dino {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.dino{
+  width: 60px;
+}
+
+#obstacle {
+  position: absolute;
+  bottom: 0;
+  right: -50px;
+  width: 40px;
+  height: 40px;
+  background-color: #f44336;
+  border-radius: 5px;
+  animation: moveObstacle 2s linear infinite;
+}
+
+@keyframes moveObstacle {
+  from {
+    right: -50px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  animation: colorChange 6s infinite;
+}
+
+#fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #000000;
+  }
+  25% {
+    color: #ff98ff;
+  }
+  50% {
+    color: #664bff;
+  }
+  75% {
+    color: #ff4bcf;
+  }
+  100% {
+    color: #4b4bff;
+  }
+}
